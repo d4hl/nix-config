@@ -17,6 +17,8 @@
         cups
         dbus
         expat
+        fontconfig
+        freetype
         gdk-pixbuf
         glib
         gtk3
@@ -32,10 +34,12 @@
         libxkbcommon
         libxrandr
         libxshmfence
+        libz
         nspr
         nss
         pango
         stdenv.cc.cc.lib
+        zlib
         zstd
       ];
     };
