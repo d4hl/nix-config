@@ -38,6 +38,8 @@ let
       #encryption
       age
       sops
+
+      comma
     ];
 
     programming = with pkgs; [
