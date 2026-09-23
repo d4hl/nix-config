@@ -1,0 +1,10 @@
+{
+  "dankKDEConnect": {
+    "enabled": true
+  },
+  "wallpaperCarousel": {
+    "enabled": true,
+    "borderWidth": 3,
+    "overlayOpacity": 80
+  }
+}

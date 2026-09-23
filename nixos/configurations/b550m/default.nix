@@ -154,7 +154,8 @@
           hyprland.enable = true;
           kitty.enable = true;
           neovim.enable = true;
-          noctalia-shell.enable = true;
+          # noctalia-shell.enable = true;
+          dms.enable = true;
           spicetify.enable = true;
           theme.enable = true;
           theme.name = "orchis";

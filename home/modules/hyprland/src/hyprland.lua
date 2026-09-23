@@ -2,10 +2,17 @@ function cat(args)
     return table.concat(args, " + ")
 end
 
+local shell    = "dms"
+
 ---- ARGS ----
 local mainMod  = "SUPER"
 local terminal = "ghostty"
-local menu     = "noctalia-shell ipc call launcher toggle"
+local menu
+if shell == "noctalia" then
+    menu = "noctalia-shell ipc call launcher toggle"
+elseif shell == "dms" then
+    menu = "dms ipc launcher toggle"
+end
 
 local hostname = io.popen("hostname"):read("*l")
 
@@ -40,6 +47,11 @@ end
 
 ---- AUTOSTART ----
 hl.on("hyprland.start", function()
+    if shell == "noctalia" then
+        hl.exec_cmd("noctalia-shell")
+    elseif shell == "dms" then
+        hl.exec_cmd("dms run")
+    end
     hl.exec_cmd("noctalia-shell")
     hl.exec_cmd("nm-applet")
     hl.exec_cmd("blueman-applet")
@@ -191,11 +203,17 @@ hl.config({
 
 
 ---- KEYBINDINGS ----
+if shell == "noctalia" then
+    hl.bind(cat({ mainMod, "CTRL + l" }), hl.dsp.exec_cmd("noctalia-shell ipc call sessionMenu lock"))
+elseif shell == "dms" then
+    hl.bind(cat({ mainMod, "CTRL + l" }), hl.dsp.exec_cmd("dms ipc lock lock"))
+    hl.bind(cat({ mainMod, "v" }), hl.dsp.exec_cmd("dms ipc clipboard toggle"))
+end
+
 -- Apps
 hl.bind(cat({ mainMod, "Return" }), hl.dsp.exec_cmd(terminal))
 hl.bind(cat({ mainMod, "Q" }), hl.dsp.window.close())
 hl.bind(cat({ mainMod, "space" }), hl.dsp.exec_cmd(menu))
-hl.bind(cat({ mainMod, "CTRL + l" }), hl.dsp.exec_cmd("noctalia-shell ipc call sessionMenu lock"))
 
 hl.bind(cat({ mainMod, "F" }), hl.dsp.window.float({ action = "toggle" }))
 hl.bind(cat({ mainMod, "P" }), hl.dsp.window.pseudo())
@@ -229,7 +247,6 @@ hl.bind(cat({ mainMod, "ALT", "l" }), hl.dsp.layout("colresize +0.1"))
 hl.bind(cat({ mainMod, "ALT", "h" }), hl.dsp.layout("colresize -0.1"))
 hl.bind(cat({ mainMod, "ALT", "j" }), hl.dsp.window.resize({ x = 0, y = 50, relative = true }))
 hl.bind(cat({ mainMod, "ALT", "k" }), hl.dsp.window.resize({ x = 0, y = -50, relative = true }))
-hl.bind("F11", hl.dsp.window.fullscreen("fullscreen", "toggle"))
 
 -- Workspaces
 hl.bind(cat({ mainMod, "SHIFT", "S" }), hl.dsp.window.move({ workspace = "special:magic" }))
@@ -314,3 +331,7 @@ hl.workspace_rule({ workspace = "f[1]", gaps_out = 6, gaps_in = 0 })
 -- hl.window_rule({ match = { float = false, workspace = "w[tv1]" }, rounding = 0 })
 -- hl.window_rule({ match = { float = false, workspace = "f[1]" }, border_size = 0 })
 -- hl.window_rule({ match = { float = false, workspace = "f[1]" }, rounding = 0 })
+
+-- DMS Include Configs
+require("dms.binds")
+require("dms.binds-user")
