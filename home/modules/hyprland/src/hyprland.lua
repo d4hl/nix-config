@@ -112,44 +112,43 @@ hl.bind(cat({ mainMod, "B" }), function()
 
     hl.dispatch(
         hl.dsp.layout(
-            "colresize " .. window_sizes[idx]
+            "colresize -conf"
         )
     )
 end)
 
 
 ---- WORKSPACE PADDING ----
-local function compute_horizontal_gap()
+local function compute_horizontal_gap(coef)
     local cfg = configs[hostname]
     if not cfg or #cfg == 0 then return 0 end
     local mon = cfg[1]
-    local mode = mon.mode or "1920x1080@60"
+    local mode = mon.mode or "1920"
     local scale = mon.scale or 1
     local w = tonumber(mode:match("^(%d+)")) or 1920
-    return math.floor(w / scale * 0.04)
+    return math.floor(w / scale * coef) or 0
 end
-local horizontal_gap = compute_horizontal_gap()
+local horizontal_gap = compute_horizontal_gap(0.04)
 
 
 ---- CONFIG ----
 hl.config({
     general = {
-        gaps_in = 5,
+        gaps_in = {
+            top = 7,
+            bottom = 7,
+            left = 10,
+            right = 10,
+        },
         gaps_out = {
-            top = 6,
-            bottom = 6,
+            top = 10,
+            bottom = 10,
             left = horizontal_gap,
             right = horizontal_gap,
         },
-        border_size = 2,
+        border_size = 1,
         allow_tearing = true,
         layout = "scrolling",
-        col = {
-            active_border = {
-                colors = { "#3584e4", "#19467c" },
-                angle = 50
-            },
-        },
     },
 
     decoration = {
@@ -160,9 +159,10 @@ hl.config({
         fullscreen_opacity = 1.0,
         shadow = {
             enabled = true,
-            range = 10,
-            render_power = 3,
-            color = "#1a1a1a",
+            range = 50,
+            render_power = 5,
+            offset = { 1, 1 },
+            color = "#06060677",
         },
         blur = {
             enabled = true,
@@ -178,6 +178,7 @@ hl.config({
         fullscreen_on_one_column = true,
         column_width = 1,
         focus_fit_method = 1,
+        follow_min_visible = 1,
     },
 
     dwindle = { preserve_split = true, smart_split = false },
@@ -193,6 +194,10 @@ hl.config({
         repeat_rate = 40,
         force_no_accel = true,
         touchpad = { natural_scroll = false },
+    },
+
+    cursor = {
+        hide_on_key_press = true,
     },
 
     gestures = {
@@ -325,13 +330,15 @@ hl.window_rule({
     immediate = true,
 })
 
-hl.workspace_rule({ workspace = "w[tv1]", gaps_out = 6, gaps_in = 0 })
-hl.workspace_rule({ workspace = "f[1]", gaps_out = 6, gaps_in = 0 })
--- hl.window_rule({ match = { float = false, workspace = "w[tv1]" }, border_size = 0 })
+hl.workspace_rule({ workspace = "w[tv1]", gaps_out = { left = 5 }, gaps_in = 0 })
+hl.workspace_rule({ workspace = "f[1]", gaps_out = { top = 0, bottom = 0, left = 5, right = 0, }, gaps_in = 0 })
+hl.window_rule({ match = { float = false, workspace = "w[tv1]" }, border_size = 0 })
+hl.window_rule({ match = { float = false, workspace = "f[1]" }, border_size = 0 })
 -- hl.window_rule({ match = { float = false, workspace = "w[tv1]" }, rounding = 0 })
--- hl.window_rule({ match = { float = false, workspace = "f[1]" }, border_size = 0 })
 -- hl.window_rule({ match = { float = false, workspace = "f[1]" }, rounding = 0 })
 
 -- DMS Include Configs
 require("dms.binds")
 require("dms.binds-user")
+require("dms.layout")
+require("dms.colors")

@@ -5,9 +5,13 @@ DEFAULT_SESSION="workspace"
 
 DIRS=(
     "Documents/"
-    "Documents/projects"
-    "Documents/projects/maio"
-    # "Documents/projects/pytorch"
+    "Documents/typst"
+    "Documents/projects/coop"
+    "Documents/projects/forks"
+    "Documents/projects/lessons"
+    "Documents/projects/personal"
+    "Documents/projects/tests"
+    "Documents/projects/work"
 )
 
 EXTRA=(

@@ -40,6 +40,9 @@ let
       sops
 
       comma
+      tldr
+      matugen
+      vault-bin
     ];
 
     programming = with pkgs; [
@@ -49,6 +52,8 @@ let
 
       python3
       nodejs
+      python3
+      uv
 
       #devops
       terraform
@@ -102,6 +107,7 @@ let
     ];
 
     desktop = with pkgs; [
+      anki
       audacity
       discord
       google-chrome

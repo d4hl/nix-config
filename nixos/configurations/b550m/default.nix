@@ -145,8 +145,8 @@
         targets.genericLinux.enable = true;
 
         localModules = {
-          anki.enable = true;
           bitwarden.enable = true;
+          dms.enable = true;
           firefox.enable = true;
           fish.enable = true;
           ghostty.enable = true;
@@ -154,8 +154,6 @@
           hyprland.enable = true;
           kitty.enable = true;
           neovim.enable = true;
-          # noctalia-shell.enable = true;
-          dms.enable = true;
           spicetify.enable = true;
           theme.enable = true;
           theme.name = "orchis";
@@ -197,6 +195,7 @@
         enable = true;
         withUWSM = true;
       };
+      kdeconnect.enable = true;
       steam.enable = true;
       xfconf.enable = true;
 
