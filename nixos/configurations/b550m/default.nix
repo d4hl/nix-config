@@ -190,24 +190,23 @@
 
     documentation.man.cache.enable = false; # disable fish cache generation
     programs = {
+      corectrl.enable = true;
       fish.enable = true;
+      happ = {
+        enable = true;
+        tunMode.enable = true;
+      };
       hyprland = {
         enable = true;
         withUWSM = true;
       };
       kdeconnect.enable = true;
       steam.enable = true;
-      xfconf.enable = true;
-
       throne = {
         enable = true;
         tunMode.enable = true;
       };
-      happ = {
-        enable = true;
-        tunMode.enable = true;
-      };
-      corectrl.enable = true;
+      xfconf.enable = true;
     };
 
     environment.systemPackages = with pkgs; [ ];
