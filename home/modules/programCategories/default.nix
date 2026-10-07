@@ -51,7 +51,6 @@ let
       android-tools
       android-studio
 
-      python3
       nodejs
       python3
       uv
@@ -119,6 +118,7 @@ let
       qbittorrent
       super-productivity
       telegram-desktop
+      thunderbird
       vesktop
       vscode
 
