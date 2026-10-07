@@ -1,3 +1,7 @@
 src/firefox.css
 src/plugins/
 src/themes/
+src/.changelog-1.6
+src/.firstlaunch
+src/clsettings.json
+src/monitors.json
