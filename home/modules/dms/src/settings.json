@@ -1,6 +1,7 @@
 {
   "currentThemeName": "dynamic",
   "currentThemeCategory": "dynamic",
+  "customThemeFile": "/home/dahl/.config/DankMaterialShell/themes/amoledBlack/theme.json",
   "matugenContrast": 0.25,
   "popupTransparency": 0.9,
   "floatingWindowTransparency": 0.9,
@@ -61,7 +62,7 @@
       "width": 50
     },
     {
-      "id": "darkMode",
+      "id": "plugin_lidguard",
       "enabled": true,
       "width": 50
     }
@@ -73,6 +74,7 @@
   "appDrawerSectionViewModes": {
     "apps": "grid"
   },
+  "networkPreference": "wifi",
   "cursorSettings": {
     "theme": "System Default",
     "size": 24,
@@ -97,6 +99,7 @@
   "acPostLockMonitorTimeout": 300,
   "batteryNotifyLow": true,
   "batteryCriticalNotificationType": 0,
+  "lockBeforeSuspend": true,
   "showDock": true,
   "dockSmartAutoHide": true,
   "dockShowOnFullscreen": true,
@@ -105,7 +108,6 @@
   "notificationShowTimeoutBar": true,
   "notificationFocusedMonitor": true,
   "osdAlwaysShowValue": true,
-  "osdPowerProfileEnabled": true,
   "screenPreferences": {
     "wallpaper": [
       "all"
@@ -123,6 +125,7 @@
       "showOnLastDisplay": true,
       "leftWidgets": [
         "launcherButton",
+        "focusedWindow",
         "clock",
         "weather",
         "systemTray",
@@ -171,14 +174,24 @@
           "showBatteryPercent": true,
           "showBatteryTime": false,
           "showBatteryPowerCharging": false,
-          "batteryStyle": "icon",
+          "batteryStyle": "solid",
           "showBatteryPowerDischarging": false
         },
         {
           "id": "controlCenterButton",
           "enabled": true,
           "showDoNotDisturbIcon": true,
-          "showIdleInhibitorIcon": true
+          "showIdleInhibitorIcon": true,
+          "showAudioPercent": false,
+          "showMicIcon": false,
+          "showMicPercent": false,
+          "showBrightnessIcon": false,
+          "showBrightnessPercent": false,
+          "showPrinterIcon": false
+        },
+        {
+          "id": "lidguard",
+          "enabled": true
         }
       ],
       "spacing": 4,

@@ -14,6 +14,9 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
   boot = {
+    binfmt.emulatedSystems = [
+      "aarch64-linux"
+    ];
     loader = {
       systemd-boot.enable = lib.mkForce false;
       efi.canTouchEfiVariables = true;

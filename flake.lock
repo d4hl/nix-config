@@ -293,15 +293,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1788664244,
-        "narHash": "sha256-m+4ikE8Nnw1lu5R3Z3VEIcwZ4REXfxlZRn/3WPAjYcs=",
-        "owner": "dahl-gh",
+        "lastModified": 1791056432,
+        "narHash": "sha256-UcQBgPyZEV+zJlEvnb+yTx4Uz4Z3Y2idhqXdCFOrgDM=",
+        "owner": "d4hl",
         "repo": "happ-nix",
-        "rev": "409a209c9ea94fca8f152a76105a008232edf47a",
+        "rev": "3bf4d4c500426288d2b5ae8e02942cd37e04c783",
         "type": "github"
       },
       "original": {
-        "owner": "dahl-gh",
+        "owner": "d4hl",
         "repo": "happ-nix",
         "type": "github"
       }
@@ -654,6 +654,26 @@
         "type": "github"
       }
     },
+    "pw-looper": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1791130901,
+        "narHash": "sha256-ntL/QKd6F0QN0pEkEs1gfYuEIE7x9VycqHaS/Z1aNiQ=",
+        "owner": "d4hl",
+        "repo": "pw-looper",
+        "rev": "43e238e3c0d716f0c6c813cbb7c4e341aa1972e3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "d4hl",
+        "repo": "pw-looper",
+        "type": "github"
+      }
+    },
     "quickshell": {
       "inputs": {
         "nixpkgs": [
@@ -689,6 +709,7 @@
         "nixpkgs": "nixpkgs_3",
         "noctalia": "noctalia",
         "polyMc": "polyMc",
+        "pw-looper": "pw-looper",
         "spicetify-nix": "spicetify-nix"
       }
     },

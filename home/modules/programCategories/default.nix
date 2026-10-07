@@ -43,6 +43,7 @@ let
       tldr
       matugen
       vault-bin
+      cava
     ];
 
     programming = with pkgs; [
@@ -112,6 +113,7 @@ let
       discord
       google-chrome
       libreoffice-qt6
+      onlyoffice-desktopeditors
       moonlight-qt
       obsidian
       qbittorrent
@@ -119,6 +121,8 @@ let
       telegram-desktop
       vesktop
       vscode
+
+      inputs.pw-looper.packages.${system}.default
     ];
 
     creation = with pkgs; [

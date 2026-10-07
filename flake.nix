@@ -33,8 +33,11 @@
     helium.url = "github:schembriaiden/helium-browser-nix-flake";
     helium.inputs.nixpkgs.follows = "nixpkgs";
 
-    happ.url = "github:dahl-gh/happ-nix";
+    happ.url = "github:d4hl/happ-nix";
     happ.inputs.nixpkgs.follows = "nixpkgs";
+
+    pw-looper.url = "github:d4hl/pw-looper";
+    pw-looper.inputs.nixpkgs.follows = "nixpkgs";
 
     affinity-nix.url = "github:mrshmllow/affinity-nix";
     affinity-nix.inputs.nixpkgs.follows = "nixpkgs";

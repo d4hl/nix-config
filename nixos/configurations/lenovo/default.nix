@@ -86,7 +86,9 @@
       displayManager = {
         ly.enable = true;
       };
-      desktopManager = { };
+      desktopManager = {
+        plasma6.enable = true;
+      };
 
       ollama = {
         enable = true;
@@ -138,6 +140,8 @@
       tlp.pd.enable = true;
       power-profiles-daemon.enable = false;
 
+      nix-serve.enable = true;
+
       immich = {
         enable = true;
         host = "0.0.0.0";
@@ -167,6 +171,7 @@
         localModules = {
           anki.enable = true;
           bitwarden.enable = true;
+          dms.enable = true;
           firefox.enable = true;
           fish.enable = true;
           ghostty.enable = true;
@@ -174,7 +179,6 @@
           hyprland.enable = true;
           kitty.enable = true;
           neovim.enable = true;
-          noctalia-shell.enable = true;
           spicetify.enable = true;
           theme.enable = true;
           theme.name = "orchis";
@@ -212,25 +216,25 @@
 
     documentation.man.cache.enable = false; # disable fish cache generation
     programs = {
+      corectrl.enable = true;
       fish.enable = true;
-      hyprland = {
-        enable = true;
-        withUWSM = true;
-      };
-      steam.enable = true;
-      xfconf.enable = true;
       happ = {
         enable = true;
         tunMode = {
           enable = true;
         };
       };
-      corectrl.enable = true;
-
+      hyprland = {
+        enable = true;
+        withUWSM = true;
+      };
+      kdeconnect.enable = true;
+      steam.enable = true;
       throne = {
         enable = true;
         tunMode.enable = true;
       };
+      xfconf.enable = true;
     };
 
     environment.systemPackages = with pkgs; [ ];

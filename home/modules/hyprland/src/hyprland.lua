@@ -222,6 +222,7 @@ hl.bind(cat({ mainMod, "space" }), hl.dsp.exec_cmd(menu))
 
 hl.bind(cat({ mainMod, "F" }), hl.dsp.window.float({ action = "toggle" }))
 hl.bind(cat({ mainMod, "P" }), hl.dsp.window.pseudo())
+hl.bind(cat({ mainMod, "W" }), hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }))
 -- hl.bind(mainMod .. " + G", hl.dsp.layout("togglesplit"))
 hl.bind(cat({ mainMod, "Delete" }), hl.dsp.exit())
 
@@ -338,7 +339,5 @@ hl.window_rule({ match = { float = false, workspace = "f[1]" }, border_size = 0 
 -- hl.window_rule({ match = { float = false, workspace = "f[1]" }, rounding = 0 })
 
 -- DMS Include Configs
-require("dms.binds")
-require("dms.binds-user")
 require("dms.layout")
 require("dms.colors")
