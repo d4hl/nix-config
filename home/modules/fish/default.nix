@@ -121,7 +121,7 @@ let
     end
 
     if type -q tmux
-        if not set -q TMUX
+        if not set -q TMUX; and not set -q SSH_CONNECTION
             exec tmux new-session -As workspace
         end
     end
