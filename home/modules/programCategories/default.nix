@@ -51,6 +51,8 @@ let
       android-tools
       android-studio
 
+      dbeaver-bin
+
       nodejs
       python3
       uv
