@@ -34,6 +34,8 @@
       ruff
       # qml
       kdePackages.qtdeclarative
+      # terraform
+      terraform-ls
       # typst
       tinymist
       typst
