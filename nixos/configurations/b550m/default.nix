@@ -75,6 +75,7 @@
     ##### SERVICES #####
     security = {
       rtkit.enable = true;
+      pki.certificateFiles = [ ../../../secrets/d4hl-root-ca.cert.pem ];
     };
 
     services = {
@@ -212,4 +213,3 @@
     environment.systemPackages = with pkgs; [ ];
   };
 }
-

@@ -23,7 +23,6 @@ in
         playNext
         playingSource
         spicyLyrics
-        betterGenres
       ];
       enabledCustomApps = with spicePkgs.apps; [
         newReleases
