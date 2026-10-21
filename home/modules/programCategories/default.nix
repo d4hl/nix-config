@@ -96,7 +96,7 @@ let
     desktop-essentials = with pkgs; [
       file-roller
       imv
-      inputs.helium.packages.${system}.default
+      inputs.helium.packages.${stdenv.hostPlatform.system}.default
       kdePackages.filelight
       localsend
       mission-center
@@ -124,7 +124,7 @@ let
       vesktop
       vscode
 
-      inputs.pw-looper.packages.${system}.default
+      inputs.pw-looper.packages.${stdenv.hostPlatform.system}.default
     ];
 
     creation = with pkgs; [

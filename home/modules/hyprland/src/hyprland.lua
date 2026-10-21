@@ -304,17 +304,42 @@ local shot_monitor = 'grim -o "' .. focused_monitor .. '" -'
 local shot_region = 'grim -g "$(slurp)" -'
 
 local copy = 'wl-copy --type image/png'
+local copy_text = 'wl-copy'
+
+local notify = 'notify-send'
+local ocr = 'tesseract stdin stdout -l eng+rus+jpn --oem 1 --psm 3'
 
 local satty =
     'satty --filename - --floating-hack --resize 1000x600 --early-exit ' ..
     '--copy-command "wl-copy" ' ..
     '--output-filename ~/Pictures/Screenshots/satty-$(date "+%Y%m%d-%H:%M:%S").png'
 
-hl.bind("PRINT", hl.dsp.exec_cmd(shot_monitor .. " | " .. copy))
-hl.bind("SHIFT + PRINT", hl.dsp.exec_cmd(shot_region .. " | " .. copy))
+local ocr_region = 'set -o pipefail; ' ..
+    shot_region .. ' | ' ..
+    ocr .. ' 2>/dev/null | ' ..
+    copy_text .. ' && ' ..
+    notify .. ' "OCR" "Text copied to clipboard" || ' ..
+    notify .. ' "OCR" "Failed to recognize or copy text"'
 
+-- Screenshots to clipboard
+hl.bind("PRINT", hl.dsp.exec_cmd(
+    shot_monitor .. " | " ..
+    copy .. " && " ..
+    notify .. ' "Screenshot" "Copied to clipboard"'
+))
+hl.bind("SHIFT + PRINT", hl.dsp.exec_cmd(
+    shot_region .. " | " ..
+    copy .. " && " ..
+    notify .. ' "Screenshot" "Copied to clipboard"'
+))
+
+-- Screenshots with annotation
 hl.bind("CTRL + PRINT", hl.dsp.exec_cmd(shot_monitor .. " | " .. satty))
 hl.bind("CTRL + SHIFT + PRINT", hl.dsp.exec_cmd(shot_region .. " | " .. satty))
+
+-- OCR selected region
+hl.bind("CTRL + ALT + PRINT", hl.dsp.exec_cmd(ocr_region))
+
 
 ---- WINDOWS AND WORKSPACES ----
 -- fix slurp visible selection boundary

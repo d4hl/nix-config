@@ -19,20 +19,25 @@
       brightnessctl
       xdg-desktop-portal-hyprland
 
+      # screenshots
+      grim
       hyprshot
       jq
-      grim
-      slurp
+      libnotify
       satty
+      slurp
+      tesseract
 
+      # connections
       networkmanagerapplet
       blueman
 
+      # music
       pulseaudio
       alsa-utils
       pwvucontrol
     ];
-    
+
     services.hypridle.enable = true;
 
     home.file = {
