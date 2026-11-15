@@ -80,16 +80,16 @@ let
       dig
       inetutils
       nftables
+      nmap
       openssl
+      tcpdump
       traceroute
       wget
       wireguard-tools
 
+      mtr
       bandwhich
       iperf3
-      mtr
-      nmap
-      tcpdump
       termshark
     ];
 
@@ -97,6 +97,7 @@ let
       file-roller
       imv
       inputs.helium.packages.${stdenv.hostPlatform.system}.default
+      inputs.openwhisper.packages.${stdenv.hostPlatform.system}.default
       kdePackages.filelight
       localsend
       mission-center

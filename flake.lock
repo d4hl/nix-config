@@ -268,11 +268,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791056432,
-        "narHash": "sha256-UcQBgPyZEV+zJlEvnb+yTx4Uz4Z3Y2idhqXdCFOrgDM=",
+        "lastModified": 1792426876,
+        "narHash": "sha256-kClRIEE7aNsNFZTkx2VpwnOVCyXHp0hi3ik8e/BlMj8=",
         "owner": "d4hl",
         "repo": "happ-nix",
-        "rev": "3bf4d4c500426288d2b5ae8e02942cd37e04c783",
+        "rev": "06b60a87f88309d80a44c14d01e37a0d45769245",
         "type": "github"
       },
       "original": {
@@ -546,6 +546,26 @@
         "type": "github"
       }
     },
+    "openwhisper": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1793777975,
+        "narHash": "sha256-BTHKEtys/sml+neSmC9s1KcffZXBSYskANjaoHvCMfQ=",
+        "owner": "OpenWhispr",
+        "repo": "openwhispr",
+        "rev": "d5821a7c88f4c1803b06c51b4580f16c51dd0dbe",
+        "type": "github"
+      },
+      "original": {
+        "owner": "OpenWhispr",
+        "repo": "openwhispr",
+        "type": "github"
+      }
+    },
     "plugin-loader-src": {
       "flake": false,
       "locked": {
@@ -662,6 +682,7 @@
         "milk-grub-theme": "milk-grub-theme",
         "nixpkgs": "nixpkgs_3",
         "noctalia": "noctalia",
+        "openwhisper": "openwhisper",
         "polyMc": "polyMc",
         "pw-looper": "pw-looper",
         "spicetify-nix": "spicetify-nix"

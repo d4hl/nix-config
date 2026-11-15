@@ -8,6 +8,7 @@
         "docker"
         "networkmanager"
         "libvirtd"
+        "input"
       ];
       shell = pkgs.fish;
     };

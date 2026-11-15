@@ -49,9 +49,12 @@
     ];
     kernelPackages = pkgs.linuxPackages_zen;
     extraModulePackages = [ ];
-    extraModprobeConfig = "";
-    # options rtw89_core disable_ps_mode=y
-    # options rtw89_pci disable_aspm=y
+    extraModprobeConfig = ''
+      # RTL8852BE (rtw89): firmware под нагрузкой не выходит из LPS + глючный
+      # Lenovo BIOS по PCIe power management. См. ubuntu bug 2145121.
+      options rtw89_core disable_ps_mode=y
+      options rtw89_pci disable_aspm_l1=y disable_aspm_l1ss=y disable_clkreq=y
+    '';
     kernelParams = [
       "8250.nr_uarts=0" # disable legacy COM ports (-load time)
       "pcie_aspm=off"

@@ -101,5 +101,16 @@ in
         };
       };
     };
+
+    home.sessionVariables = {
+      TERMINAL = "ghostty";
+      BROWSER = "helium";
+      XCURSOR_THEME = "Bibata-Modern-Classic";
+    };
+    systemd.user.sessionVariables = {
+      TERMINAL = "ghostty";
+      BROWSER = "helium";
+      XCURSOR_THEME = "Bibata-Modern-Classic";
+    };
   };
 }

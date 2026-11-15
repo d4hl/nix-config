@@ -2,7 +2,8 @@
   "currentThemeName": "dynamic",
   "currentThemeCategory": "dynamic",
   "customThemeFile": "/home/dahl/.config/DankMaterialShell/themes/amoledBlack/theme.json",
-  "matugenContrast": 0.25,
+  "matugenScheme": "scheme-smart",
+  "matugenSourceMode": "darkness",
   "popupTransparency": 0.9,
   "floatingWindowTransparency": 0.9,
   "cornerRadius": 12,
@@ -93,6 +94,7 @@
   },
   "launcherLogoMode": "os",
   "launcherLogoColorOverride": "primary",
+  "useSystemSoundTheme": true,
   "soundLogin": true,
   "acLockTimeout": 300,
   "acSuspendTimeout": 900,
@@ -101,8 +103,9 @@
   "batteryCriticalNotificationType": 0,
   "lockBeforeSuspend": true,
   "showDock": true,
-  "dockSmartAutoHide": true,
-  "dockShowOnFullscreen": true,
+  "dockAutoHide": true,
+  "dockUseOverlayLayer": true,
+  "dockPosition": 3,
   "notificationPopupBodyInvokesAction": true,
   "lockScreenNotificationMode": 2,
   "notificationShowTimeoutBar": true,
@@ -200,7 +203,7 @@
       "barLengthPadding": 0,
       "bottomGap": 0,
       "attachToScreenEdge": false,
-      "transparency": 0.5,
+      "transparency": 0.2,
       "widgetTransparency": 1,
       "squareCorners": false,
       "noBackground": false,
@@ -217,12 +220,12 @@
       "borderOpacity": 1,
       "borderThickness": 1,
       "widgetOutlineEnabled": false,
-      "widgetOutlineColor": "secondary",
-      "widgetOutlineOpacity": 0.16,
+      "widgetOutlineColor": "surfaceText",
+      "widgetOutlineOpacity": 0.1,
       "widgetOutlineThickness": 1,
       "fontScale": 1,
       "iconScale": 1,
-      "autoHide": false,
+      "autoHide": true,
       "autoHideStrict": false,
       "autoHideDelay": 250,
       "showOnWindowsOpen": false,
@@ -235,13 +238,13 @@
       "scrollEnabled": true,
       "scrollXBehavior": "column",
       "scrollYBehavior": "workspace",
-      "shadowIntensity": 0,
+      "shadowIntensity": 12,
       "shadowOpacity": 60,
       "shadowColorMode": "default",
       "shadowCustomColor": "#000000",
       "clickThrough": false,
       "hoverPopouts": false,
-      "hoverPopoutDelay": 297,
+      "hoverPopoutDelay": 150,
       "islandFloating": false,
       "islandUseOverlayLayer": true,
       "islandReserveThickness": 40,
@@ -274,6 +277,22 @@
     "hslLightness": 1,
     "valid": true
   },
+  "desktopWidgetInstances": [
+    {
+      "id": "dw_1791405006944_a121k128e",
+      "widgetType": "activateLinux",
+      "name": "Activate Linux Watermark",
+      "enabled": false,
+      "config": {
+        "displayPreferences": [
+          "all"
+        ],
+        "showOnOverlay": true,
+        "clickThrough": true,
+        "syncPositionAcrossScreens": false
+      }
+    }
+  ],
   "builtInPluginSettings": {
     "dms_settings_search": {
       "trigger": "?"

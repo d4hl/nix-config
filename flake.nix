@@ -24,6 +24,9 @@
     noctalia.url = "github:noctalia-dev/noctalia-shell/v4.7.7";
     noctalia.inputs.nixpkgs.follows = "nixpkgs";
 
+    openwhisper.url = "github:OpenWhispr/openwhispr";
+    openwhisper.inputs.nixpkgs.follows = "nixpkgs";
+
     polyMc.url = "github:PolyMC/PolyMC";
     polyMc.inputs.nixpkgs.follows = "nixpkgs";
 

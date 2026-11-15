@@ -138,7 +138,15 @@ in
       shellInit = ''
         direnv hook fish | source
 
-        set -q KREW_ROOT; and set -gx PATH $PATH $KREW_ROOT/.krew/bin; or set -gx PATH $PATH $HOME/.krew/bin
+        set -q KREW_ROOT; and set -l krew_path $KREW_ROOT/.krew/bin; or set -l krew_path $HOME/.krew/bin
+        contains -- $krew_path $PATH; or set -gx PATH $PATH $krew_path
+
+        # дедупликация значений в PATH
+        set -l clean_path
+        for p in $PATH
+            contains -- $p $clean_path; or set -a clean_path $p
+        end
+        set -gx PATH $clean_path
       '';
       shellAliases = {
         vi = "nvim";
