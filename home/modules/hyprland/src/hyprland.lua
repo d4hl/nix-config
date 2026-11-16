@@ -28,6 +28,12 @@ local configs = {
             bitdepth = 10,
             transform = 0,
         },
+        {
+            output = "desc:Microstep MSI G241 0x000001C4",
+            mode = "1920x1080@144",
+            position = "0x0",
+            scale = 1,
+        }
     },
 
     ["kitayoza"] = {

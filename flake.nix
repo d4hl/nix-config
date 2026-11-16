@@ -24,9 +24,6 @@
     noctalia.url = "github:noctalia-dev/noctalia-shell/v4.7.7";
     noctalia.inputs.nixpkgs.follows = "nixpkgs";
 
-    openwhisper.url = "github:OpenWhispr/openwhispr";
-    openwhisper.inputs.nixpkgs.follows = "nixpkgs";
-
     polyMc.url = "github:PolyMC/PolyMC";
     polyMc.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -53,14 +50,8 @@
       system = "x86_64-linux";
 
       localUtils = import ./utils.nix { lib = nixpkgs.lib; };
-      openldapOverlay = _: prev: {
-        openldap = prev.openldap.overrideAttrs {
-          doCheck = !prev.stdenv.hostPlatform.isi686;
-        };
-      };
 
       overlays = [
-        openldapOverlay
         inputs.affinity-nix.overlays.default
       ];
 

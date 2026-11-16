@@ -97,7 +97,6 @@ let
       file-roller
       imv
       inputs.helium.packages.${stdenv.hostPlatform.system}.default
-      inputs.openwhisper.packages.${stdenv.hostPlatform.system}.default
       kdePackages.filelight
       localsend
       mission-center
